@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Mail, Phone, MapPin, Share2, Globe } from 'lucide-react';
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer id="contact" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
@@ -11,8 +13,8 @@ const Footer = () => {
             Transform your SAP landscape with the right experts and proven methodologies.
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%', maxWidth: '400px' }}>
-            <button className="btn btn-primary" style={{ width: '100%', padding: '16px 24px' }}>Book a Free Consultation</button>
-            <button className="btn btn-secondary" style={{ width: '100%', padding: '16px 24px', backgroundColor: '#ffffff', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>Hire SAP Experts Today</button>
+            <button className="btn btn-primary" onClick={() => navigate('/consultation')} style={{ width: '100%', padding: '16px 24px' }}>Book a Free Consultation</button>
+            <button className="btn btn-secondary" onClick={() => navigate('/consultation')} style={{ width: '100%', padding: '16px 24px', backgroundColor: '#ffffff', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>Hire SAP Experts Today</button>
           </div>
         </div>
 

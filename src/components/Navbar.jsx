@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
     { name: 'Services', href: '#services' },
@@ -23,6 +26,8 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (location.pathname !== '/') return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -45,12 +50,19 @@ const Navbar = () => {
         if (el) observer.unobserve(el);
       });
     };
-  }, []);
+  }, [location.pathname]);
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
     const targetId = href.substring(1);
+
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+      // Let the browser handle the hash after navigation
+      return;
+    }
+
     const elem = document.getElementById(targetId);
     if (elem) {
       window.scrollTo({
@@ -75,7 +87,10 @@ const Navbar = () => {
       transition: 'all 0.3s ease'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div 
+          onClick={() => navigate('/')} 
+          style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
+        >
           <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 30L20 10L28 30" stroke="#094cb2" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M16 25H24" stroke="#094cb2" strokeWidth="4" strokeLinecap="round"/>
@@ -103,7 +118,13 @@ const Navbar = () => {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <span style={{ display: 'none' }} className="desktop-btn">
-                <button className="btn btn-primary" style={{ padding: '10px 24px', fontSize: '0.9rem', borderRadius: '4px' }}>Get Started</button>
+                <button 
+                  className="btn btn-primary" 
+                  onClick={() => navigate('/consultation')}
+                  style={{ padding: '10px 24px', fontSize: '0.9rem', borderRadius: '4px' }}
+                >
+                  Get Started
+                </button>
             </span>
             <button 
               className="mobile-menu" 
@@ -129,7 +150,13 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button className="btn btn-primary" style={{ width: '100%', marginTop: '8px' }}>Get Started</button>
+            <button 
+              className="btn btn-primary" 
+              onClick={() => { setIsOpen(false); navigate('/consultation'); }}
+              style={{ width: '100%', marginTop: '8px' }}
+            >
+              Get Started
+            </button>
           </div>
         </div>
       )}

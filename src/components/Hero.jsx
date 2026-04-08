@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Star } from 'lucide-react';
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero-section reveal" style={{ paddingTop: '100px', paddingBottom: '80px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         {/* Animated Background Blobs */}
@@ -25,7 +27,7 @@ const Hero = () => {
         </p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', maxWidth: '500px', margin: '0 auto' }}>
-          <button className="btn btn-primary" style={{ flex: '1 1 auto', padding: '16px 24px', minWidth: '200px' }}>Book a Free Consultation</button>
+          <button className="btn btn-primary" onClick={() => navigate('/consultation')} style={{ flex: '1 1 auto', padding: '16px 24px', minWidth: '200px' }}>Book a Free Consultation</button>
           <button className="btn btn-secondary" style={{ flex: '1 1 auto', padding: '16px 24px', minWidth: '200px', backgroundColor: '#e5e7eb', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>Hire SAP Experts</button>
         </div>
 
