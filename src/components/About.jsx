@@ -3,7 +3,7 @@ import meetingImg from '../assets/hero.png';
 
 const About = () => {
   return (
-    <section className="section-padding reveal" style={{ backgroundColor: '#ffffff' }}>
+    <section id="about" className="section-padding reveal" style={{ backgroundColor: '#ffffff' }}>
       <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
         <div>
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: '800', color: '#111827', marginBottom: '24px', lineHeight: '1.1', maxWidth: '800px' }}>

@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Share2, Globe } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#ffffff' }}>
+    <footer id="contact" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
         {/* Grey CTA Box */}
         <div style={{ backgroundColor: '#e5e7eb', borderRadius: '24px', padding: '60px 32px', textAlign: 'center', margin: '60px 0', display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>

@@ -10,7 +10,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="section-padding reveal" style={{ backgroundColor: '#f9fafb' }}>
+    <section id="services" className="section-padding reveal" style={{ backgroundColor: '#f9fafb' }}>
       <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
         <div>
           <span className="label-text">WHAT WE OFFER</span>

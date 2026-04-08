@@ -11,7 +11,7 @@ const Industries = () => {
   ];
 
   return (
-    <section className="section-padding reveal" style={{ backgroundColor: '#ffffff', textAlign: 'center', overflow: 'hidden' }}>
+    <section id="industries" className="section-padding reveal" style={{ backgroundColor: '#ffffff', textAlign: 'center', overflow: 'hidden' }}>
       <div className="container" style={{ marginBottom: '40px' }}>
         <span className="label-text">INDUSTRIES WE SERVE</span>
         <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: '800', color: 'var(--text-dark)', fontFamily: 'var(--font-serif)' }}>Cross-Domain Expertise</h2>
