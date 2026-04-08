@@ -21,15 +21,15 @@ const Footer = () => {
           
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 30L20 10L28 30" stroke="#094cb2" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M16 25H24" stroke="#094cb2" strokeWidth="4" strokeLinecap="round"/>
                 <path d="M20 10L28 30" stroke="#10b981" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" opacity="0.8"/>
                 <path d="M22 20L28 15" stroke="#10b981" strokeWidth="4" strokeLinecap="round" opacity="0.8"/>
               </svg>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '1.25rem', fontWeight: '700', color: '#094cb2', lineHeight: '1' }}>Arka<span style={{ color: '#84cc16' }}>fusion</span></span>
-                <span style={{ fontSize: '0.35rem', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '2px' }}>Advancing Transformation with Trust</span>
+                <span style={{ fontSize: '1.75rem', fontWeight: '800', color: '#094cb2', lineHeight: '1' }}>Arka<span style={{ color: '#84cc16' }}>fusion</span></span>
+                <span style={{ fontSize: '0.45rem', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: '4px' }}>Advancing Transformation with Trust</span>
               </div>
             </div>
             <p style={{ fontSize: '0.9rem', color: '#6b7280', lineHeight: '1.6', maxWidth: '300px' }}>
